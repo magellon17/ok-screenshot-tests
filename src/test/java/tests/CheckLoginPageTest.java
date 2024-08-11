@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import ru.yandex.qatools.ashot.Screenshot;
-import utils.ScreenshotMaker;
+import utils.ScreenshotTaker;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static utils.ScreenshotComparer.compareScreenshotsAndSaveDiffToFile;
@@ -15,7 +15,7 @@ public class CheckLoginPageTest extends BaseTest {
 
     @Test
     public void checkLoginPageTest() {
-        Screenshot actualScreenshot = ScreenshotMaker.takeScreenshot();
+        Screenshot actualScreenshot = ScreenshotTaker.takeScreenshot();
         assertFalse(compareScreenshotsAndSaveDiffToFile(REFERENCE_SCREENSHOT, actualScreenshot, DIFF_SCREENSHOT_PATH),
                 "Скриншоты различны");
     }
